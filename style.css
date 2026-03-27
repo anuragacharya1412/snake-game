@@ -1,34 +1,70 @@
-/* ... keep previous styles, but add/modify these ... */
-
-canvas {
-    max-width: 90vw; /* Scales with screen width */
-    max-height: 90vw;
-    border: 4px solid #0f3460;
-    background-color: #000;
+body {
+    background-color: #1a1a2e;
+    color: #00d2ff;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling while playing */
 }
 
+.game-container {
+    text-align: center;
+    background: #16213e;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.2);
+    width: 95%;
+    max-width: 420px;
+}
+
+h1 {
+    color: #e94560;
+    margin: 10px 0;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
+
+#score-board {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+canvas {
+    border: 3px solid #0f3460;
+    background-color: #000;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 15px #00d2ff;
+}
+
+/* Mobile D-Pad Styling */
 .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .mid-ctrl {
     display: flex;
-    gap: 40px; /* Space between Left and Right */
+    gap: 30px;
 }
 
 .ctrl-btn {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background: #16213e;
     border: 2px solid #00d2ff;
     color: #00d2ff;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 10px;
     margin: 5px;
-    /* Prevents highlighting text when tapping quickly */
+    cursor: pointer;
     user-select: none; 
     -webkit-tap-highlight-color: transparent;
 }
@@ -38,7 +74,18 @@ canvas {
     color: #16213e;
 }
 
-/* Hide controls on desktop if you prefer (optional) */
+#start-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    background: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* On desktop, we can hide the buttons if we want, but keeping them allows mouse-play */
 @media (min-width: 800px) {
-    .controls { display: none; }
+    h1 { font-size: 2rem; }
 }
