@@ -1,61 +1,44 @@
-body {
-    background-color: #1a1a2e;
-    color: #0f3460;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.game-container {
-    text-align: center;
-    background: #16213e;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 213, 0.2);
-}
-
-h1 {
-    color: #e94560;
-    margin-bottom: 10px;
-    letter-spacing: 5px;
-}
-
-#score-board {
-    color: #00d2ff;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
+/* ... keep previous styles, but add/modify these ... */
 
 canvas {
+    max-width: 90vw; /* Scales with screen width */
+    max-height: 90vw;
     border: 4px solid #0f3460;
     background-color: #000;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 0 10px #00d2ff;
 }
 
-.instructions {
-    color: #95a5a6;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-button {
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    padding: 10px 25px;
-    font-size: 1rem;
-    background: #e94560;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    background: #ff2e63;
-    transform: scale(1.05);
+.mid-ctrl {
+    display: flex;
+    gap: 40px; /* Space between Left and Right */
+}
+
+.ctrl-btn {
+    width: 60px;
+    height: 60px;
+    background: #16213e;
+    border: 2px solid #00d2ff;
+    color: #00d2ff;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: 5px;
+    /* Prevents highlighting text when tapping quickly */
+    user-select: none; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ctrl-btn:active {
+    background: #00d2ff;
+    color: #16213e;
+}
+
+/* Hide controls on desktop if you prefer (optional) */
+@media (min-width: 800px) {
+    .controls { display: none; }
 }
